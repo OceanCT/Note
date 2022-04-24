@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import numpy as np
 
 
@@ -55,10 +56,27 @@ def test(theta_in: np.ndarray, x: np.ndarray):
     print("能及格")
 
 
+def L_theta(theta_in: np.ndarray, x: np.ndarray, y: np.ndarray):
+    ans = 0
+    for j in range(n):
+        x1 = x[j]
+        y1 = y[j]
+        tmp_h = h_theta(theta_in, x1)
+        ans += y1 * np.log(tmp_h) + (1 - y1) * np.log2(1-tmp_h)
+    L.append(-ans / n)
+    return -ans / n
+
+
+def picture_draw():
+    plt.plot(np.array(L))
+    plt.show()
+
+
 if __name__ == '__main__':
     x_data = np.loadtxt('data2x.csv')
     y_data = np.loadtxt('data2y.csv')
     n = len(x_data)
+    L = []
     ending_flag = 1e-8
     x0 = [1 for i in range(n)]
     x_data = np.column_stack((x0, x_data))
@@ -67,10 +85,14 @@ if __name__ == '__main__':
     print(theta_next)
     cnt = 1
     while not teller(theta_next, theta):
+        L_theta(theta, x_data, y_data)
         cnt += 1
         theta = theta_next
         theta_next = iter_once(theta, x_data, y_data)
     theta = theta_next
+    L_theta(theta, x_data, y_data)
     print("共迭代%s次" % cnt)
     print("最优theta为:", theta)
     test(theta, np.array([1, 20, 80]))
+    picture_draw()
+
