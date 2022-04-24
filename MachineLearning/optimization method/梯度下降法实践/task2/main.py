@@ -69,7 +69,7 @@ def picture_draw():
 
 
 if __name__ == '__main__':
-    # read task1
+    # read task2
     x_data = numpy.loadtxt('./data2_x.csv').T
     y_data = numpy.loadtxt('./data2_y.csv').T
     training_loss = []
