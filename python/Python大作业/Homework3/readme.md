@@ -1,3 +1,20 @@
+# Structure
+```
+.
+├── ClientGUI
+│   ├── Config.py
+│   ├── LoginFrame.py
+│   ├── ReceiverFrame.py
+│   ├── SenderFrame.py
+│   └── __init__.py
+├── ClientService
+│   ├── Client.py
+│   ├── ClientServer.py
+│   └── __init__.py
+├── config.yaml
+├── main.py
+```
+
 # How to Use?
 
 仅仅运行main.py即可
