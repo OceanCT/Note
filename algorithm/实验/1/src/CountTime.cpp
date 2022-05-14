@@ -1,13 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define FIN freopen("solution1.txt","r",stdin);
-#define FOUT freopen("time1.txt","w",stdout);
+#define FIN freopen("solution2.txt","r",stdin);
+#define FOUT freopen("time2.txt","w",stdout);
 #define ENIN freopen("CON","r",stdin);
 #define ENOUT freopen("CON", "w", stdout);
 #define IOS ios::sync_with_stdio(false);
-
-
 int main(){
 	FIN
 	FOUT
@@ -19,7 +17,7 @@ int main(){
 			cin>>tmp;
 			sum+=tmp;
 		}
-		cout<<sum/100<<endl;
+		cout<<to_string(sum/100)<<endl;
 	}
 	return 0;
 }

@@ -1,5 +1,4 @@
 #include<bits/stdc++.h>
-#include<windows.h>
 using namespace std;
 #define FIN freopen("data.txt","r",stdin);
 #define FOUT freopen("solution2.txt","w",stdout);
@@ -11,7 +10,7 @@ int t;
 int n;
 int a[N];
 int b[N];
-long long cnt;
+long long cnt = 0;
 void inita(){
 	cin>>n;
 	for(int i=1;i<=n;i++) cin>>a[i];
@@ -46,19 +45,22 @@ void merge(int l,int r){
 	for(int i=l;i<=r;i++) a[i] = b[i];
 	// cout<<l<<" "<<r<<" "<<cnt<<endl;
 }
+void solve(){
+	cnt = 0;
+	inita();
+	merge(1,n);
+}
 int main(){
 	FIN
 	FOUT
-	IOS
 	cin>>t;
 	for(int i=1;i<=t;i++){
-		cnt = 0;
-		DWORD start = GetTickCount();
-		inita();
-		merge(1,n);	
-		// cout<<cnt<<endl; 
-		DWORD end = GetTickCount();
-		cout<<end-start<<endl;
+		auto start = chrono::high_resolution_clock::now();
+		solve();		
+		auto end = chrono::high_resolution_clock::now();
+		auto diff = end-start;
+		cout<<diff.count()<<endl;
+		cerr<<"Finished "<<i<<endl;
 	}
 	return 0;
 }

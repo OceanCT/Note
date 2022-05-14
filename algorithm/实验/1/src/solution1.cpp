@@ -1,5 +1,4 @@
 #include<bits/stdc++.h>
-#include<windows.h>
 using namespace std;
 #define FIN freopen("data.txt","r",stdin);
 #define FOUT freopen("solution1.txt","w",stdout);
@@ -10,30 +9,33 @@ using namespace std;
 int t;
 int n;
 int a[N];
-long long cnt;
 void inita(){
 	cin>>n;
-	for(int i=1;i<=n;i++) cin>>a[i];
-	
+	for(int i=1;i<=n;i++) cin>>a[i];	
+}
+void solve(){
+	inita();
+	long long cnt = 0;
+	for(int i=1;i<=n;i++){
+		for(int j=i+1;j<=n;j++){
+			if(a[i]>a[j]) cnt++;
+		}
+	// cout<<cnt<<endl;
+	}
 }
 int main(){
 	FIN
 	FOUT
-	IOS
+	// IOS
 	cin>>t;
 	// t = 1;
 	for(int i=1;i<=t;i++){
-		cnt = 0;
-		DWORD start = GetTickCount();
-		inita();
-		for(int i=1;i<=n;i++){
-			for(int j=i+1;j<=n;j++){
-				if(a[i]>a[j]) cnt++;
-			}
-		}		
-		// cout<<cnt<<endl;
-		DWORD end = GetTickCount();
-		cout<<end-start<<endl;
+		auto start = chrono::high_resolution_clock::now();
+		solve();		
+		auto end = chrono::high_resolution_clock::now();
+		auto diff = end-start;
+		cout<<diff.count()<<endl;
+		cerr<<"Finished "<<i<<endl;
 	}
 	return 0;
 }
