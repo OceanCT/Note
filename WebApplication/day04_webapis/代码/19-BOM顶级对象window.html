@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            //Bom之顶级对象window，两层含义：
+            //（1）它是 JS 访问浏览器窗口的一个接口。通过该接口，可以操作浏览器的窗口的大小，滚动，刷新页面等。
+            //（2）它是一个全局对象。定义在全局作用域中的变量、函数都会变成 window 对象的属性和方法。
+
+            // 之前直接写document.querySelector()，实际上是：
+            // window.document.querySelector()
+
+            //全局作用域中的变量、函数都会变成 window 对象的属性和方法
+            var num = 10;
+            console.log(num);
+            console.log(window.num);
+
+            function fn() {
+                console.log(11);
+            }
+
+            fn();
+            window.fn();
+
+            // alert(11);
+            // window.alert(11)
+
+            console.dir(window);
+
+            //window中有name属性，最好不要使用name，容易和window.name混了
+            // var name = 10;
+            console.log(window.name);
+        </script>
+    </body>
+
+</html>

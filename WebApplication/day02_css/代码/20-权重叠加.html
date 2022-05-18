@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            /*出现了权重叠加的现象 */
+            /*.nav a 权重 0,0,1,0  + 0,0,0,1  = 0,0,1,1 */
+            .nav a {
+                color: red;
+            }
+
+            /*.first  权重 0,0,1,0*/
+
+            .first {
+                color: pink;
+            }
+
+            /*.nav .first 0,0,1,0 + 0,0,1,0 = 0,0,2,0 */
+            .nav .first {
+                color: blue;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div> 人生四大悲</div>
+        <div class="nav">
+            <a href="#" class="first">1.家里没宽带</a><br>
+            <a href="#">2.网速不够快</a><br>
+            <a href="#">3.手机没流量</a><br>
+            <a href="#">4.学校无wifi</a>
+        </div>
+    </body>
+</html>

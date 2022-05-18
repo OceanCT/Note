@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script>
+
+            //2. 使用window.onload()
+            window.onload = function () {
+                var btn = document.querySelector('button');
+                btn.addEventListener('click', function () {
+                    alert('点击我');
+                })
+            }
+
+            //3. window.onload 传统注册事件方式 只能写一次，如果有多个，会以最后一个 window.onload 为准。
+            //window.onload = function() {
+            //    alert(22);
+            //}
+
+            //4. 如果使用 addEventListener 则没有限制， 注意时load时间
+            //window.addEventListener('load', function () {
+            //    var btn = document.querySelector('button');
+            //    btn.addEventListener('click', function () {
+            //        alert('点击我');
+            //    })
+            //})
+            //
+            //window.addEventListener('load', function () {
+            //
+            //    alert(22);
+            //})
+            //
+
+            //5. load 需要等页面内容全部加载完毕，包含页面dom元素 图片 flash  css 等等
+            //document.addEventListener('DOMContentLoaded', function () {
+            //    alert(33);
+            //})
+            // load 等页面内容全部加载完毕，包含页面dom元素 图片 flash  css 等等
+            // DOMContentLoaded 是DOM 加载完毕，不包含图片 falsh css 等就可以执行 加载速度比 load更快一些
+        </script>
+    </head>
+
+    <body>
+
+        <button>点击</button>
+        <!--1. 之前写js-->
+        <!--<script>-->
+        <!--    var btn = document.querySelector('button');-->
+        <!--    btn.addEventListener('click', function () {-->
+        <!--        alert('点击我');-->
+        <!--    })-->
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>后代选择器</title>
+        <style>
+            /*任务：选择div标签后代，包括儿子，孙子等后代标签是<a>的*/
+            /*任务：选择div标签儿子是<li>的*/
+            .nav a {
+                color: pink;
+            }
+
+            .wangsicong ul li {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="nav">
+            <a href="#">内部链接</a>
+            <a href="#">内部链接</a>
+            <a href="#">内部链接</a>
+        </div>
+
+        <a href="#">外部链接</a>
+        <a href="#">外部链接</a>
+        <a href="#">外部链接</a>
+
+		<br>
+
+        <ul>
+            <li>一条狗</li>
+            <li>一条狗</li>
+            <li>一条狗</li>
+        </ul>
+
+        <div class="wangsicong">
+            <ul>
+                <li>王可可是一条狗</li>
+                <li>王可可是一条狗</li>
+                <li>王可可是一条狗</li>
+            </ul>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>电灯开关</title>
+
+    </head>
+    <body>
+
+        <img id="light" src="../images/off.gif">
+
+        <script>
+            /*
+                分析：
+                    1.获取图片对象
+                    2.绑定单击事件
+                    3.每次点击切换图片
+                        * 规则：
+                            * 如果灯是开的 on,切换图片为 off
+                            * 如果灯是关的 off,切换图片为 on
+                        * 使用标记flag来完成
+             */
+
+            //1.获取图片对象
+            var light = document.getElementById("light");
+            var flag = false;//代表灯是灭的。 off图片
+            //2.绑定单击事件
+            light.onclick = opc;
+            // 命名函数。调用函数的代码既可以放到声明函数的前面，也可以放在声明函数的后面
+            //匿名函数。函数调用必须写到函数体下面
+            function opc() {
+                if (flag) {//判断如果灯是开的，则灭掉
+                    light.src = "images/off.gif";
+                    flag = false;
+                } else {
+                    //如果灯是灭的，则打开
+                    light.src = "images/on.gif";
+                    flag = true;
+                }
+            }
+        </script>
+    </body>
+</html>

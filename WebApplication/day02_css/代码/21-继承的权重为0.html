@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>计算权重时，继承的权重为0</title>
+        <style>
+            div {
+                color: red;
+            }
+
+            p {
+                color: green;
+            }
+
+            /*因为demo 没有选p标签，只是选择了 div所以 继承的权重为 0*/
+            /*
+                .demo {
+                    color: blue;
+                }
+
+                #test {
+                    color: pink;
+                }
+            */
+        </style>
+    </head>
+    <body>
+        <div class="demo" id="test">
+            <p>继承的权重为 0</p>
+        </div>
+    </body>
+</html>
