@@ -18,7 +18,6 @@ struct msg {
     char msg_buf[MSG_SIZE];
 };
 int qid, pid;
-struct msg pmsg;
 void create_queue(){
     if((qid = msgget(IPC_PRIVATE,IPC_CREAT|0666))< 0){
         perror("msgget");
@@ -26,6 +25,7 @@ void create_queue(){
     }
 }
 void send(){
+    struct msg pmsg;
     pmsg.msg_types = MSG_TYPE;
     sprintf(pmsg.msg_buf, "Hello! This is :%d\n", getpid());
     if((msgsnd(qid,&pmsg,MSG_SIZE,0))<0){
@@ -36,6 +36,7 @@ void send(){
     printf("%s",pmsg.msg_buf);
 }
 void receive(){
+    struct msg pmsg;
     if((msgrcv(qid,&pmsg,MSG_SIZE,MSG_TYPE,0))<0){
         perror("msgrcv");
         exit(1);
